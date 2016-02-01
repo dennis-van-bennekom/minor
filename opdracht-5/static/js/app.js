@@ -3,12 +3,14 @@
 
   var app = {
     init: function() {
+
       routes.init();
     }
   };
 
   var routes = {
     init: function() {
+
       window.addEventListener('hashchange', function(event) {
         var route = window.location.hash;
 
@@ -19,6 +21,7 @@
 
   var sections = {
     toggle: function(route) {
+
       var sections = document.querySelectorAll('.section');
 
       [].forEach.call(sections, function(section) {
