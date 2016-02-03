@@ -54,23 +54,23 @@
         this.location.forEach(function(currentLocation) {
             var location = {
                 coords: {
-                    latitude: currentLocation[3],
-                    longitude: currentLocation[4]
+                    latitude: this.currentLocation[3],
+                    longitude: this.currentLocation[4]
                 }
             };
 
-            if(calculateDistsance(location, currentPosition) < currentLocation[2]) {
-                if (window.location !== currentLocation[1] &&
-                    localStorage[currentLocation[0]] == 'false') {
+            if(calculateDistsance(location, currentPosition) < this.currentLocation[2]) {
+                if (window.location !== this.currentLocation[1] &&
+                    localStorage[this.currentLocation[0]] == 'false') {
                     try {
-                        localStorage[currentLocation[0]] == 'false' ?
-                            localStorage[currentLocation[0]] = 1:
-                            localStorage[currentLocation[0]] += 1;
+                        localStorage[this.currentLocation[0]] == 'false' ?
+                            localStorage[this.currentLocation[0]] = 1:
+                            localStorage[this.currentLocation[0]] += 1;
                     } catch(error) {
                         console.log('Localstorage is not available');
                     }
 
-                    window.location = currentLocation[1];
+                    window.location = this.currentLocation[1];
                 }
             }
         });
