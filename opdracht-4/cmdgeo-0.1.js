@@ -99,7 +99,7 @@
     }
 
     Maps.prototype.generateMap = function(options, canvasID) {
-            map = new google.maps.Map(document.getElementById(canvasID), myOptions);
+            map = new google.maps.Map(document.getElementById(canvasID), options);
 
             var routeList = [];
 
