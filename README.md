@@ -1,7 +1,7 @@
 # Minor Web Development
 ## Web App From Scratch
 
-[pages](http://dennis-van-bennekom.github.io/minor-web-app-from-scratch)
+[Github Pages](http://dennis-van-bennekom.github.io/minor-web-app-from-scratch)
 
 Hier zijn al mijn opdrachten voor dit vak te vinden.
 
