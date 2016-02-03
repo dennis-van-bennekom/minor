@@ -44,5 +44,6 @@ Hier zijn al mijn opdrachten voor dit vak te vinden.
 - **Javascript:** de bezoeker moet javascript aan hebben staan tenzij je server side rendering gebruikt.
 - **Performance:** de browser moet templates renderen dit kan ten koste gaan van performance.
 
+**Bronnen:**
 - [React Redux](https://github.com/rackt/redux)
 - [Javascript Fatigue](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4#.epy77ap2f)
