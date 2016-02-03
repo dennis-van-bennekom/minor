@@ -163,4 +163,8 @@
         this.map.setCenter(newPos);
         this.currentPositionMarker.setPosition(newPos);
     }
+
+    var maps = new Maps();
+
+    maps.init();
 })();
