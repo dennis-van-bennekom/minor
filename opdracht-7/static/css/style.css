@@ -1,11 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
+
+  background-color: #eee;
 }
 
-.section {
-  display: none;
+.header {
+  background-color: #fff;
+  box-shadow: 0 -1.9rem 1rem 2rem rgba(0,0,0,0.4);
 }
 
-.section.active {
+.search-form {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.search-form input {
+  min-width: 20rem;
+
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-align: center;
+
+  border: none;
+  border-top: 2px solid rgba(0,0,0,0);
+  border-bottom: 2px solid #ccc;
+}
+
+.search-form input:focus {
+  outline: none;
+}
+
+.template {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.template h1 {
+  margin-top: 3rem;
+  color: #ddd;
+}
+
+.artists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 63rem;
+}
+
+.artist {
+  width: 20rem;
+  margin: 0.5rem;
+
+  transition: transform 0.1s ease-in-out;
+}
+
+.artist:hover {
+  transform: scale(1.02);
+}
+
+.artist a {
   display: block;
+
+  text-decoration: none;
+
+  background: #fff;
+  color: #333;
+}
+
+.artist img {
+  display: block;
+  width: 100%;
+}
+
+.artist span {
+  display: block;
+  line-height: 2rem;
+
+  text-align: center;
 }

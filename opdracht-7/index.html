@@ -2,29 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Opdracht 5</title>
+  <title>Opdracht 7</title>
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
   <div class="container">
-    <section id="navigation">
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#practices">Best Practices</a></li>
-        </ul>
-      </nav>
-    </section>
+    <div class="header">
+      <form class="search-form">
+        <input id="artist-input" type="text" name="artist" placeholder="Type artist name here">
+      </form>
+    </div>
 
-    <section class="section active" id="home">
-      <h1>Home</h1>
-    </section>
-
-    <section class="section" id="practices">
-      <h1>Best practises</h1>
-    </section>
+    <div id="app"></div>
   </div>
 
+  <script src="static/js/lib/routie.min.js"></script>
+  <script src="static/js/lib/mustache.min.js"></script>
+  <script src="static/js/lib/underscore.min.js"></script>
   <script src="static/js/app.js"></script>
 </body>
 </html>
