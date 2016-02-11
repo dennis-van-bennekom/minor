@@ -5,10 +5,12 @@
 
   {{ #artists }}
     <div class="artist">
-      <a href="#{{ name }}">
-        <img src="{{ image.3.#text }}" alt="">
-        <span>{{ name }}</span>
-      </a>
+      <span>
+        <a href="#detail/{{ name }}">
+          <img src="{{ image.3.#text }}" alt="">
+        </a>
+        <a href="#{{ name }}">{{ name }}</span>
+      </span>
     </div>
   {{ /artists }}
 </div>

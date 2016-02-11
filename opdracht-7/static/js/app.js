@@ -39,8 +39,6 @@
                             artists = artists.similarartists.artist;
                             artists = _.sortBy(artists, 'name');
 
-                            console.log(artists);
-
                             data = {
                                 artist: artist,
                                 artists: artists,
@@ -48,6 +46,34 @@
                             };
 
                             views.render('artist.mst', data);
+                        });
+                },
+
+                'detail/:artist': (artist) => {
+                    $artistInput.value = artist;
+
+                    var data = {
+                        artist: artist,
+                        detail: false,
+                        loading: true
+                    };
+
+                    views.render('detail.mst', data);
+
+                    fetch(`https://ws.audioscrobbler.com/2.0/?api_key=9112859bf77f54259252dc9bc48a8cb9&method=artist.getInfo&format=json&autocorrect=1&artist=${artist}`)
+                        .then(response => response.json())
+                        .then(detail => {
+                            detail = detail.artist;
+
+                            console.log(detail);
+
+                            data = {
+                                artist: artist,
+                                detail: detail,
+                                loading: false
+                            }
+
+                            views.render('detail.mst', data);
                         });
                 }
             });

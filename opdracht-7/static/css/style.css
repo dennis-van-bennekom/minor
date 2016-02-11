@@ -43,7 +43,7 @@ body {
   text-align: center;
 }
 
-.template h1 {
+.template > h1 {
   margin-top: 3rem;
   color: #ddd;
 }
@@ -85,4 +85,33 @@ body {
   line-height: 2rem;
 
   text-align: center;
+}
+
+.detail {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.detail a {
+  color: #000;
+}
+
+.detail .image img {
+  margin: 0 auto;
+  display: block;
+  max-height: 60vh;
+}
+
+.detail .stats {
+  margin: 1rem 0;
+}
+
+.detail .bio {
+  text-align: left;
+  max-width: 35rem;
+  line-height: 1.4;
+}
+
+.detail .similar {
+  margin-top: 1rem;
 }
