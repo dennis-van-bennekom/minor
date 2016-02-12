@@ -80,7 +80,7 @@ body {
   width: 100%;
 }
 
-.artist span {
+.artist .name {
   display: block;
   line-height: 2rem;
 

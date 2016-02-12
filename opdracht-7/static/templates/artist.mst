@@ -9,7 +9,7 @@
         <a href="#detail/{{ name }}">
           <img src="{{ image.3.#text }}" alt="">
         </a>
-        <a href="#{{ name }}">{{ name }}</span>
+        <a class="name" href="#{{ name }}">{{ name }}</a>
       </span>
     </div>
   {{ /artists }}
