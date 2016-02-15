@@ -103,15 +103,13 @@
                 routie(artist);
             });
 
-            var shakeEvent = new Shake({
-                threshold: 15
-            });
+            var shakeEvent = new Shake();
 
             shakeEvent.start();
 
             window.addEventListener('shake', event => {
                 alert('shake');
-            });
+            }, false);
         }
     };
 
