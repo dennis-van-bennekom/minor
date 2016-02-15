@@ -1,0 +1,26 @@
+<div class="template artists">
+  {{ #loading }}
+    <h1>Loading</h1>
+  {{ /loading }}
+
+  {{ #detail }}
+    <div class="detail">
+      <section class="image">
+        <img src="{{ image.4.#text }}" alt="">
+      </section>
+
+      <section class="stats">
+        <span class="listeners">Listeners: {{ stats.listeners }}</span>
+        <span class="playcount">Plays: {{ stats.playcount }}</span>
+      </section>
+
+      <section class="bio">
+        {{{ bio.content }}}
+      </section>
+
+      <section class="similar">
+        <a href="#{{ artist }}">More like {{ artist }}</a>
+      </section>
+    </div>
+  {{ /detail }}
+</div>

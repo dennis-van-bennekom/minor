@@ -1,0 +1,16 @@
+<div class="template artists">
+  {{ #loading }}
+    <h1>Loading</h1>
+  {{ /loading }}
+
+  {{ #artists }}
+    <div class="artist">
+      <span>
+        <a href="#detail/{{ name }}">
+          <img src="{{ image.3.#text }}" alt="">
+        </a>
+        <a class="name" href="#{{ name }}">{{ name }}</a>
+      </span>
+    </div>
+  {{ /artists }}
+</div>
