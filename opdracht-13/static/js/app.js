@@ -101,7 +101,7 @@
             });
 
             // Shake gesture
-            window.addEventListener('keydown', event => {
+            window.addEventListener('devicemotion', event => {
                 if (event.acceleration.x > 5 ||
                     event.acceleration.y > 5 ||
                     event.acceleration.z > 5) {
