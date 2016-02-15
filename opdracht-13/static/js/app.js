@@ -110,7 +110,7 @@
             shakeEvent.start();
 
             window.addEventListener('shake', event => {
-                console.log('shake');
+                alert('shake');
             });
         }
     };
