@@ -34,6 +34,7 @@
                     $artistInput.value = artist;
 
                     state.artist = artist;
+                    state.artists = [];
                     state.loading = true;
 
                     views.render('artist.mst');
