@@ -99,14 +99,14 @@
                 routie(artist);
             });
 
-            // Shake
+            // Shake gesture
             window.addEventListener('devicemotion', event => {
                 if (event.acceleration.x > 5 ||
                     event.acceleration.y > 5 ||
                     event.acceleration.z > 5) {
                     if (!state.loading && state.artists.length > 0) {
                         var artist = state.artists[_.random(state.artists.length)];
-                        alert(artist.name);
+                        routie(artist);
                     }
                 }
             }, false);
