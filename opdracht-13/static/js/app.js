@@ -106,9 +106,11 @@
 
             // Shake
             window.addEventListener('devicemotion', event => {
-                alert(event.acceleration.x,
-                      event.acceleration.y,
-                      event.acceleration.z);
+                if (event.acceleration.x > 5 ||
+                    event.acceleration.y > 5 ||
+                    event.acceleration.z > 5) {
+                    alert('shake!!');
+                }
             }, false);
         }
     };
