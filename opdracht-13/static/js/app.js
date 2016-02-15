@@ -100,13 +100,13 @@
             });
 
             // Shake gesture
-            window.addEventListener('devicemotion', event => {
+            window.addEventListener('keydown', event => {
                 if (event.acceleration.x > 5 ||
                     event.acceleration.y > 5 ||
                     event.acceleration.z > 5) {
                     if (!state.loading && state.artists.length > 0) {
                         var artist = state.artists[_.random(state.artists.length)];
-                        routie(artist);
+                        routie(artist.name);
                     }
                 }
             }, false);
