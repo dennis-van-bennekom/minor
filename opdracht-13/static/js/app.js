@@ -95,6 +95,7 @@
 
     var events = {
         init () {
+            // Search
             var searchForm = document.querySelector('.search-form');
             searchForm.addEventListener('submit', event => {
                 event.preventDefault();
@@ -103,12 +104,9 @@
                 routie(artist);
             });
 
-            var shakeEvent = new Shake();
-
-            shakeEvent.start();
-
-            window.addEventListener('shake', event => {
-                alert('shake');
+            // Shake
+            window.addEventListener('devicemotion', event => {
+                alert('wow');
             }, false);
         }
     };
