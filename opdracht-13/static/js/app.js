@@ -69,7 +69,7 @@
                             state.detail = detail;
                             state.loading = false;
 
-                            views.render('detail.mst', data);
+                            views.render('detail.mst');
                         });
                 }
             });
