@@ -106,7 +106,9 @@
 
             // Shake
             window.addEventListener('devicemotion', event => {
-                alert('wow');
+                alert(event.acceleration.x,
+                      event.acceleration.y,
+                      event.acceleration.z);
             }, false);
         }
     };
