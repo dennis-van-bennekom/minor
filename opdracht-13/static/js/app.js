@@ -4,6 +4,13 @@
     var $app = document.getElementById('app');
     var $artistInput = document.getElementById('artist-input');
 
+    var state = {
+        artist: '',
+        artists: [],
+        detail: false,
+        loading: false
+    }
+
     var app = {
         init () {
             routes.init();
@@ -26,12 +33,10 @@
                 ':artist': (artist) => {
                     $artistInput.value = artist;
 
-                    var data = {
-                        artist: artist,
-                        loading: true
-                    };
+                    state.artist = artist;
+                    state.loading = true;
 
-                    views.render('artist.mst', data);
+                    views.render('artist.mst');
 
                     fetch(`https://ws.audioscrobbler.com/2.0/?api_key=9112859bf77f54259252dc9bc48a8cb9&method=artist.getSimilar&format=json&limit=12&autocorrect=1&artist=${artist}`)
                         .then(response => response.json())
@@ -39,39 +44,30 @@
                             artists = artists.similarartists.artist;
                             artists = _.sortBy(artists, 'name');
 
-                            data = {
-                                artist: artist,
-                                artists: artists,
-                                loading: false
-                            };
+                            state.artists = artists;
+                            state.loading = false;
 
-                            views.render('artist.mst', data);
+                            views.render('artist.mst');
                         });
                 },
 
                 'detail/:artist': (artist) => {
                     $artistInput.value = artist;
 
-                    var data = {
-                        artist: artist,
-                        detail: false,
-                        loading: true
-                    };
+                    state.artist = artist;
+                    state.detail = false;
+                    state.loading = true;
 
-                    views.render('detail.mst', data);
+                    views.render('detail.mst');
 
                     fetch(`https://ws.audioscrobbler.com/2.0/?api_key=9112859bf77f54259252dc9bc48a8cb9&method=artist.getInfo&format=json&autocorrect=1&artist=${artist}`)
                         .then(response => response.json())
                         .then(detail => {
                             detail = detail.artist;
 
-                            console.log(detail);
-
-                            data = {
-                                artist: artist,
-                                detail: detail,
-                                loading: false
-                            }
+                            state.artist = artist;
+                            state.detail = detail;
+                            state.loading = false;
 
                             views.render('detail.mst', data);
                         });
@@ -81,14 +77,13 @@
     };
 
     var views = {
-        render (filename, data) {
+        render (filename) {
             var path = 'static/templates/' + filename;
-            data = data || {};
 
             fetch(path).then(response => {
                 return response.text();
             }).then(template => {
-                $app.innerHTML = Mustache.render(template, data);
+                $app.innerHTML = Mustache.render(template, state);
             });
         }
     };
@@ -109,7 +104,10 @@
                 if (event.acceleration.x > 5 ||
                     event.acceleration.y > 5 ||
                     event.acceleration.z > 5) {
-                    alert('shake!!');
+                    if (!state.loading && state.artists.length > 0) {
+                        var artist = state.artists[_.random(state.artists.length)];
+                        alert(artist.name);
+                    }
                 }
             }, false);
         }
