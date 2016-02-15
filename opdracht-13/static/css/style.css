@@ -85,11 +85,18 @@ body {
   line-height: 2rem;
 
   text-align: center;
+
+  transition: transform 0.1s ease-in-out;
+}
+
+.artist .name:hover {
+  transform: scale(1.05);
 }
 
 .detail {
   background-color: #fff;
   padding: 1rem;
+  max-width: 35rem;
 }
 
 .detail a {
@@ -99,6 +106,7 @@ body {
 .detail .image img {
   margin: 0 auto;
   display: block;
+  width: 100%;
   max-height: 60vh;
 }
 
@@ -108,7 +116,6 @@ body {
 
 .detail .bio {
   text-align: left;
-  max-width: 35rem;
   line-height: 1.4;
 }
 
