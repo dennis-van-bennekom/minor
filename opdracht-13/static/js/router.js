@@ -9,6 +9,8 @@ var router = (function(state) {
                 'home': () => {
                     $header.classList.remove('nothome');
                     $artistInput.focus();
+
+                    this.render('home.mst');
                 },
 
                 ':artist': (artist) => {
