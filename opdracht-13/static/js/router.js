@@ -13,6 +13,7 @@ var router = (function(state) {
                 ':artist': (artist) => {
                     $header.classList.add('nothome');
                     $artistInput.value = artist;
+                    $artistInput.blur();
 
                     state.artist = artist;
                     state.artists = [];
@@ -37,6 +38,7 @@ var router = (function(state) {
                 'detail/:artist': (artist) => {
                     $header.classList.add('nothome');
                     $artistInput.value = artist;
+                    $artistInput.blur();
 
                     state.artist = artist;
                     state.detail = false;
