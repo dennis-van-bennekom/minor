@@ -13,8 +13,31 @@ body {
 }
 
 .header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: #fff;
   box-shadow: 0 -1.9rem 1rem 2rem rgba(0,0,0,0.4);
+
+  transition: height 0.4s;
+}
+
+.header .search-form input {
+  font-size: 2.7rem;
+  line-height: 4rem;
+
+  transition: font-size 0.4s, line-height 0.4s;
+}
+
+.header.nothome {
+  height: 10rem;
+}
+
+.header.nothome .search-form input {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 .search-form {
@@ -25,8 +48,6 @@ body {
 .search-form input {
   min-width: 20rem;
 
-  font-size: 1.1rem;
-  line-height: 1.5rem;
   text-align: center;
 
   border: none;
@@ -55,11 +76,25 @@ body {
   max-width: 63rem;
 }
 
+@keyframes enterScreen {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .artist {
   width: 20rem;
   margin: 0.5rem;
 
   transition: transform 0.1s ease-in-out;
+
+  animation-name: enterScreen;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
 }
 
 .artist:hover {

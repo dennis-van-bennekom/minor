@@ -2,13 +2,16 @@ var router = (function(state) {
     return {
         init () {
             var $artistInput = document.getElementById('artist-input');
+            var $header = document.getElementsByClassName('header')[0];
+            console.log($header);
 
             routie({
                 'home': () => {
-                    this.render('home.mst');
+                    $header.classList.remove('nothome');
                 },
 
                 ':artist': (artist) => {
+                    $header.classList.add('nothome');
                     $artistInput.value = artist;
 
                     state.artist = artist;
@@ -32,6 +35,7 @@ var router = (function(state) {
                 },
 
                 'detail/:artist': (artist) => {
+                    $header.classList.add('nothome');
                     $artistInput.value = artist;
 
                     state.artist = artist;
