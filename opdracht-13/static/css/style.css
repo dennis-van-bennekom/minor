@@ -27,6 +27,7 @@ body {
 .header .search-form input {
   font-size: 2.7rem;
   line-height: 4rem;
+  max-width: 90vh;
 
   transition: font-size 0.4s, line-height 0.4s;
 }
