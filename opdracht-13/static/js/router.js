@@ -8,6 +8,7 @@ var router = (function(state) {
             routie({
                 'home': () => {
                     $header.classList.remove('nothome');
+                    $artistInput.focus();
                 },
 
                 ':artist': (artist) => {
