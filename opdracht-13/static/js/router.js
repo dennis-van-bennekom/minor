@@ -1,6 +1,7 @@
 var router = (function(state) {
     return {
         init () {
+            var $app = document.getElementById('app');
             var $artistInput = document.getElementById('artist-input');
             var $header = document.getElementsByClassName('header')[0];
 
@@ -9,9 +10,7 @@ var router = (function(state) {
                     $header.classList.remove('nothome');
                     $artistInput.focus();
 
-                    if ($app) {
-                        $app.innerHTML = '';
-                    }
+                    $app.innerHTML = '';
                 },
 
                 ':artist': (artist) => {
