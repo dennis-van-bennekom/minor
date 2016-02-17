@@ -9,7 +9,9 @@ var router = (function(state) {
                     $header.classList.remove('nothome');
                     $artistInput.focus();
 
-                    $app.innerHTML = '';
+                    if ($app) {
+                        $app.innerHTML = '';
+                    }
                 },
 
                 ':artist': (artist) => {
@@ -77,7 +79,6 @@ var router = (function(state) {
                                             state.trackList = trackList;
 
                                             self.render('detail.mst');
-                                            console.log('rendered with: ', trackList);
                                         });
                                 });
                         });
