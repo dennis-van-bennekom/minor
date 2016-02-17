@@ -3,6 +3,7 @@ var state = (function() {
     artist: '',
     artists: [],
     detail: false,
-    loading: false
+    loading: false,
+    trackList: false
   }
 }());

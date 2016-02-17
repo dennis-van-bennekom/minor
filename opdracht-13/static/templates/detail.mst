@@ -14,6 +14,12 @@
         <span class="playcount">Plays: {{ stats.playcount }}</span>
       </section>
 
+      {{ #trackList }}
+        <section class="spotify">
+          <iframe src="https://embed.spotify.com/?uri=spotify:trackset:{{ artist }}:{{ trackList }}" width="400" height="300" frameborder="0" allowtransparency="true"></iframe>
+        </section>
+      {{ /trackList }}
+
       <section class="bio">
         {{{ bio.content }}}
       </section>

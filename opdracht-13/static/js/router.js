@@ -3,14 +3,13 @@ var router = (function(state) {
         init () {
             var $artistInput = document.getElementById('artist-input');
             var $header = document.getElementsByClassName('header')[0];
-            console.log($header);
 
             routie({
                 'home': () => {
                     $header.classList.remove('nothome');
                     $artistInput.focus();
 
-                    this.render('home.mst');
+                    $app.innerHTML = '';
                 },
 
                 ':artist': (artist) => {
@@ -46,6 +45,7 @@ var router = (function(state) {
                     state.artist = artist;
                     state.detail = false;
                     state.loading = true;
+                    state.trackList = false;
 
                     this.render('detail.mst');
 
@@ -60,6 +60,26 @@ var router = (function(state) {
                             state.loading = false;
 
                             self.render('detail.mst');
+
+                            fetch(`https://api.spotify.com/v1/search?type=artist&limit=1&q=${artist}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    var id = data.artists.items[0].id;
+
+                                    fetch(`https://api.spotify.com/v1/artists/${id}/top-tracks?country=US`)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            var tracks = data.tracks;
+                                            var trackList = tracks.reduce(function(prev, current) {
+                                                return prev + ',' + current.id
+                                            }, '').substring(1);
+
+                                            state.trackList = trackList;
+
+                                            self.render('detail.mst');
+                                            console.log('rendered with: ', trackList);
+                                        });
+                                });
                         });
                 }
             });
