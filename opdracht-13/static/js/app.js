@@ -1,4 +1,4 @@
-(function (router, events) {
+var app = (function () {
     'use strict';
 
     var app = {
@@ -14,4 +14,4 @@
     };
 
     app.init();
-}(router, events));
+}());
