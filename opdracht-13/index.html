@@ -7,15 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div class="container">
-    <div class="header home">
+
+  <!-- Probeer het gebruik van div'jes te minimaliseren door gebruik te maken van andere html elementen  -->
+  <section id="home">
+    <header>
       <form class="search-form">
         <input id="artist-input" type="text" name="artist" placeholder="Type artist name here">
       </form>
-    </div>
-
-    <div id="app"></div>
-  </div>
+    </header>
+  </section>
+  
+  <section id="app">
+    
+  </section>
 
   <script src="static/js/lib/routie.min.js"></script>
   <script src="static/js/lib/mustache.min.js"></script>
